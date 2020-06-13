@@ -7,5 +7,10 @@
   "editor.fontWeight": "900",
   "editor.lineHeight": 28,
   "editor.minimap.enabled": false,
-  "liveServer.settings.multiRootWorkspaceName": "01-Class-Content"
+  "liveServer.settings.multiRootWorkspaceName": "01-Class-Content",
+  "cSpell.words": [
+    "exphbs",
+    "precommit",
+    "semistandard"
+  ]
 }

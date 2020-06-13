@@ -10,9 +10,7 @@
     "mocha": true
   },
   "extends": "prettier",
-  "plugins": [
-    "prettier"
-  ],
+  "plugins": ["prettier"],
   "rules": {
     "no-duplicate-case": "error",
     "no-empty": "error",
@@ -27,18 +25,9 @@
     "no-multi-spaces": "error",
     "no-unused-vars": ["error", { "argsIgnorePattern": "^_" }],
     "camelcase": "error",
-    "indent": [
-      "error",
-      2
-    ],
-    "quotes": [
-      "error",
-      "double"
-    ],
-    "semi": [
-      "error",
-      "always"
-    ],
+    "indent": ["error", 2],
+    "quotes": ["error", "double"],
+    "semi": ["error", "always"],
     "prettier/prettier": "error"
   }
 }

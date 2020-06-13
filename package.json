@@ -6,27 +6,41 @@
   "scripts": {
     "dev": "nodemon server.js",
     "start": "node server.js",
-    "lint": "eslint --quiet .",
-    "lint:fix": "eslint --fix .",
-    "test": "npm run lint && cross-env NODE_ENV=test mocha --reporter spec --exit"
+    "format": "prettier-standard --format",
+    "lint": "semistandard --verbose | snazzy",
+    "lint:fix": "semistandard --fix",
+    "orm:help": "sequelize --help",
+    "orm:model:create": "sequelize model:generate --attributes placeholder:string --name",
+    "orm:seed:create": "sequelize seed:generate --name",
+    "orm:migration:create": "sequelize migration:generate --name",
+    "orm:migrate": "sequelize db:migrate",
+    "orm:seed": "sequelize db:seed:all",
+    "prestart": "sequelize db:create && npm run orm:migrate",
+    "precommit": "lint-staged"
   },
   "license": "ISC",
   "dependencies": {
+    "@handlebars/allow-prototype-access": "^1.0.3",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
-    "express-handlebars": "^3.1.0",
-    "mysql2": "^2.0.2",
-    "sequelize": "^5.21.2"
+    "express-handlebars": "^4.0.4",
+    "morgan": "^1.10.0",
+    "mysql2": "^2.1.0",
+    "sequelize": "^4.44.4"
   },
   "devDependencies": {
-    "chai": "^4.2.0",
-    "chai-http": "^4.3.0",
-    "cross-env": "^6.0.3",
-    "eslint": "^6.7.2",
-    "eslint-config-prettier": "^6.7.0",
-    "eslint-plugin-prettier": "^3.1.1",
-    "mocha": "^6.2.2",
-    "prettier": "^1.19.1",
-    "sequelize-cli": "^5.5.1"
+    "jest": "^26.0.1",
+    "lint-staged": "^10.2.10",
+    "prettier-standard": "^16.3.0",
+    "semistandard": "*",
+    "sequelize-cli": "^5.5.1",
+    "snazzy": "^8.0.0",
+    "supertest": "^4.0.2"
+  },
+  "lint-staged": {
+    "**/*": [
+      "prettier-standard --lint",
+      "git add"
+    ]
   }
 }
