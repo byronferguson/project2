@@ -2,7 +2,7 @@
   "workbench.colorTheme": "monokai-chacoral(HC)",
   "editor.fontFamily": "Hack, Menlo, Monaco, 'Courier New', monospace",
   "editor.fontSize": 18,
-  "window.zoomLevel": 4,
+  "window.zoomLevel": -1,
   "editor.wordWrap": "on",
   "editor.fontWeight": "900",
   "editor.lineHeight": 28,
