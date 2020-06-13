@@ -14,9 +14,11 @@
     "orm:seed:create": "sequelize seed:generate --name",
     "orm:migration:create": "sequelize migration:generate --name",
     "orm:migrate": "sequelize db:migrate",
+    "orm:migrate:reset": "sequelize db:migrate:undo:all && npm run orm:migrate",
     "orm:seed": "sequelize db:seed:all",
+    "precommit": "lint-staged",
     "prestart": "sequelize db:create && npm run orm:migrate",
-    "precommit": "lint-staged"
+    "pretest": "cross-env NODE_ENV=test npm run orm:migrate:reset"
   },
   "license": "ISC",
   "dependencies": {
@@ -29,7 +31,7 @@
     "sequelize": "^4.44.4"
   },
   "devDependencies": {
-    "jest": "^26.0.1",
+    "cross-env": "^7.0.2",
     "lint-staged": "^10.2.10",
     "prettier-standard": "^16.3.0",
     "semistandard": "*",
