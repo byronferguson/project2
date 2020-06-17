@@ -5,8 +5,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Weekend Warrior</title>
+    <script src="https://api.mqcdn.com/sdk/mapquest-js/v1.3.2/mapquest.js"></script>
+    <link type="text/css" rel="stylesheet" href="https://api.mqcdn.com/sdk/mapquest-js/v1.3.2/mapquest.css" />
+
+    <script type="text/javascript">
+        window.onload = function () {
+            L.mapquest.key = 'lYrP4vF3Uk5zgTiGGuEzQGwGIVDGuy24';
+
+            var map = L.mapquest.map('map', {
+                center: [37.7749, -122.4194],
+                layers: L.mapquest.tileLayer('map'),
+                zoom: 12
+            });
+
+            map.addControl(L.mapquest.control());
+        }
+    </script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
 </head>
 
 <body class="bg-secondary">
@@ -24,7 +41,7 @@
             <a class="nav-link" href="#">Log In</a>
         </li>
     </ul>
-
+    <div id="map" style="margin-left: 60%; width: 30%; height: 530px;"></div>
 </body>
 
 </html>
