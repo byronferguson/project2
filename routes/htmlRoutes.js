@@ -27,9 +27,40 @@ htmlRoutes.get('/example/:id', async (req, res) => {
   });
 });
 
+// connect to survey handlebars
+htmlRoutes.get('/surveys/create', async (req, res) => {
+  res.render('createSurvey');
+});
+
+//for all user surveys
+htmlRoutes.get('/surveys', async (req, res) => {
+  res.render('surveys');
+});
+
+//for each created survey
+htmlRoutes.get('/surveys/:id/take', async (req, res) => {
+  res.render('takeSurvey', {
+    survey: {
+      id: 1,
+      title: "My Survey",
+      questions: [
+        {
+          id: 1,
+          question: "Whats your name?"
+        },
+        {
+          id: 2,
+          question: "Shut up?"
+        }
+      ]
+    }
+  });
+});
+
 // Render 404 page for any unmatched routes
 htmlRoutes.get('*', async (req, res) => {
   res.render('404');
 });
+
 
 module.exports = htmlRoutes;
