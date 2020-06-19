@@ -1,0 +1,29 @@
+<div class="container">
+    <form>
+        <h1>{{survey.title}}</h1>
+        <ul>
+            {{#each survey.questions}}
+            <li>
+                <p>Question: {{this.question}}</p>
+                <p>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="question{{this.id}}options" id="true{{this.id}}"
+                        value="option1">
+                    <label class="form-check-label" for="true{{this.id}}">True</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="question{{this.id}}options" id="false{{this.id}}"
+                        value="option2">
+                    <label class="form-check-label" for="false{{this.id}}">False</label>
+                </div>
+                </p>
+            </li>
+            {{/each}}
+        </ul>
+        <p>
+            <a href="/surveys/{{survey.id}}/take">Survey Link</a>
+        </p>
+    </form>
+
+
+</div>
