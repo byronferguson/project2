@@ -2,6 +2,8 @@ require('dotenv').config();
 const express = require('express');
 const Handlebars = require('handlebars');
 const exphbs = require('express-handlebars');
+const passport = require("../project2/config/passport");
+const expressSession = require("express-session");
 const {
   allowInsecurePrototypeAccess
 } = require('@handlebars/allow-prototype-access');
@@ -17,7 +19,8 @@ app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 app.use(express.static('public'));
 app.use(morgan('dev'));
-
+app.use(passport.initialize());
+app.use(expressSession({ secret: process.env.sessionSecret, resave: true, saveUninitialized: true }));
 // Handlebars
 app.engine(
   'handlebars',
