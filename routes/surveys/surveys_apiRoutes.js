@@ -1,48 +1,88 @@
+const Router = require('express').Router;
 const { Surveys } = require("../../models");
 const { Survey_Questions } = require("../../models");
 const { Survey_Answers } = require("../../models");
 
-module.exports = function (app) {
+const surveyRoutes = Router();
+surveyRoutes
+    .route('/:UserId')
 
-    app.get("/api/surveys", async (req, res) => {
-        const allsurveys = await Surveys.findAll({
-        });
-        res.json(allsurveys);
-    });
-    app.get("/api/survey/:user", async (req, res) => {
-        const survey = await Survey_Questions.findAll({
+    //display survey titles depends on UserID
+    .get(async (req, res) => {
+        const dbsurvey = await Surveys.findAll({
             where: {
-                user_id: req.params.user_id
+                UserId: req.params.UserId
             }
         });
-        res.json(survey);
+        res.json(dbsurvey);
     });
+surveyRoutes
+    .route('/surveyresult/:SurveyId')
 
-    app.get("/api/surveyquestions/:user_id/:survey_id", async (req, res) => {
-
-        const questions = await Survey_Questions.findAll({
+    //display survey resuklt depends on surveyId
+    .get(async (req, res) => {
+        const dbsurvey = await Survey_Questions.findAll({
             where: {
-                user_id: req.params.user_id,
-                survey_id: req.params.survey_id
-            }
+                SurveyId: req.params.SurveyId
+            },
+            include: [Survey_Answers]
         });
-        res.json(questions);
-    });
+        res.json(dbsurvey);
+    })
 
-    app.post("/api/surveyquestions", async (req, res) => {
-        const surveydata = await Survey_Questions.create(req.body);
-        res.json(surveydata);
-    });
-
-    app.delete("/api/surveyquestions/:user_id/:survey_id", async (req, res) => {
-        const surveydelelte = await Survey_Questions.destroy({
+surveyRoutes
+    .route('/surveycreate/:SurveyId')
+    //display survey questions / title to be answered
+    .get(async (req, res) => {
+        const dbsurvey = await Survey_Questions.findAll({
             where: {
-                // user_id: req.params.user_id,
-                survey_id: req.params.survey_id
-            }
+                SurveyId: req.params.SurveyId
+            },
+            include: [Surveys]
         });
-        res.json(surveydelelte);
-
+        res.json(dbsurvey);
+    })
+    // save survey title from creator
+    .post(async (req, res) => {
+        const dbsurvey = await Surveys.create({
+            survey_title: req.body.survey_title,
+            UserId: req.body.UserId
+        }
+        );
+        res.json(dbsurvey);
+    })
+    // save survey questions from creator 
+    .post(async (req, res) => {
+        const dbsurvey = await Survey_Questions.create({
+            survey_questions: req.body.survey_questions,
+            SurveyId: req.params.SurveyId
+        }
+        );
+        res.json(dbsurvey);
     });
 
-};
+surveyRoutes
+    .route('/surveyanswer')
+    // save survey answer from responser
+    .post(async (req, res) => {
+        const dbsurvey = await Survey_Answers.create({
+            survey_answers: req.body.survey_answers,
+            SurveyQuestionId: req.body.SurveyQuestionId
+        });
+        res.json(dbsurvey);
+    });
+
+surveyRoutes
+    .route('/surveydelete')
+    // delete survey by surveyId
+    .delete(async (req, res) => {
+        const options = {
+            where: {
+                SurveyId: req.body.SurveyId
+            }
+        };
+        const dbsurvey = await Survey_Questions.destroy(options);
+        res.json(dbsurvey);
+    });
+
+module.exports = surveyRoutes;
