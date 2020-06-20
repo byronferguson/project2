@@ -4,13 +4,12 @@ const db = require('../models');
 const htmlRoutes = new Router();
 
 htmlRoutes.get('/', async (req, res) => {
-  const dbExamples = await db.Example.findAll({});
-
-  res.render('index', {
-    msg: 'Welcome!',
-    examples: dbExamples
-  });
+  res.render('index', {});
 });
+
+htmlRoutes.get('/signUp', async (req, res) => {
+    res.render('signUp', {});
+})
 
 // Load example page and pass in an example by id
 htmlRoutes.get('/example/:id', async (req, res) => {

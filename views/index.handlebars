@@ -1,26 +1,22 @@
-<main class="login-container">
+<main class="input-container">
     <header class="input-header">
         <h2>Log In or Sign Up</h2>
     </header>
 
-    <section class="login-inputs">
-        <form class="login-form">
-            <div class="form-item">
+    <section class="inputs">
+        <form class="inputs-form">
+            <div class="form-grid">
                 <label for="login-email" class="form-prompt">E-mail:</label>
-                <input type="email" id="login-email" class="textfield">
+                <input type="email" id="login-email" class="textfield" name="email">
+                
+                <label for="login-password" class="form-prompt">Password:</label>
+                <input type="password" id="login-password" class="textfield" name="password">
             </div>
             
-            <div class="form-item">
-                <label for="login-username" class="form-prompt">Username:</label>
-                <input type="text" id="login-username" class="textfield">
-            </div>
-
-            <div class="form-item">
-                <input type="submit" value="Submit" id="submitBtn">
-            </div>
+            <input type="submit" value="Submit" id="submitBtn" name="submit">
         </form>
 
-        <a href="#" class="signup-link">Click here to sign up!</a>
+        <a href="/signUp" class="signup-link">Click here to sign up!</a>
     </section>
 </main>
 
