@@ -71,6 +71,13 @@ htmlRoutes.get('/surveys/:id/take', async (req, res) => {
   });
 });
 
+// not working at cause to break. need to come back too
+// // Route for logging user out
+// apiRoutes.get("/logout", (req, res) => {
+//   req.logout();
+//   res.redirect("/");
+// });
+
 // Render 404 page for any unmatched routes
 htmlRoutes.get('*', async (req, res) => {
   res.render('404');
