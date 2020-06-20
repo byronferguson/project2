@@ -7,6 +7,7 @@ const isAuthenticated = require("../config/middleware/isAuthenticated");
 const htmlRoutes = new Router();
 
 htmlRoutes.get('/', async (req, res) => {
+  // console.log(req.user) can use req.user to pull matching surveys from db;
   res.render('index', {});
 });
 
@@ -34,21 +35,15 @@ htmlRoutes.get('/example/:id', async (req, res) => {
 });
 
 // connect to survey handlebars
-htmlRoutes.get('/surveys/create', async (req, res) => {
+htmlRoutes.get('/surveys/create', isAuthenticated, async (req, res) => {
   //if user is logged in let them access otherwise send them to login page
-  if (req.user) {
-    res.render('createSurvey');
-  }
-  res.render('index', {});
+  res.render('createSurvey');
 });
 
 //for all user surveys.
-htmlRoutes.get('/surveys', async (req, res) => {
-  //if user is logged in let them access otherwise send them to login page
-  if (req.user) {
-    res.render('surveys');
-  }
-  res.render('index', {});
+htmlRoutes.get('/surveys', isAuthenticated, (_req, res) => {
+  res.render('surveys', {});
+
 });
 
 //for each created survey
