@@ -1,4 +1,4 @@
-$(document).ready(() => {
+$(document).ready(function () {
     // Getting references to our form and inputs
     const loginForm = $("form.inputs-form");
     const emailInput = $("input#login-email");
@@ -28,8 +28,9 @@ $(document).ready(() => {
             email: email,
             password: password
         })
-            .then(() => {
-                window.location.replace("/surveys");
+            .done((res) => {
+                console.log("log in successful");
+                window.location.replace("/surveys")
                 // If there's an error, log the error
             })
             .catch(err => {

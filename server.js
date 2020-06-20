@@ -19,8 +19,9 @@ app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 app.use(express.static('public'));
 app.use(morgan('dev'));
-app.use(passport.initialize());
 app.use(expressSession({ secret: process.env.sessionSecret, resave: true, saveUninitialized: true }));
+app.use(passport.initialize());
+app.use(passport.session());
 // Handlebars
 app.engine(
   'handlebars',

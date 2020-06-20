@@ -17,6 +17,8 @@ apiRoutes.post("/login", passport.authenticate("local"), (req, res) => {
         email: req.user.email,
         id: req.user.id
     });
+    //res.redirect("/surveys");
+
 });
 
 // Route for signing up a user. The user's password is automatically hashed and stored securely thanks to
