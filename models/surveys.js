@@ -9,7 +9,7 @@ module.exports = (sequelize, DataTypes) => {
     );
     Surveys.associate = function (models) {
         // associations can be defined here
-        Surveys.belongsTo(models.Users, {
+        Surveys.belongsTo(models.User, {
             foreignKey: {
                 allowNull: false
             }
