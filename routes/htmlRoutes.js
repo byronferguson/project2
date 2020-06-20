@@ -1,6 +1,9 @@
 const Router = require('express').Router;
 const db = require('../models');
 
+// Requiring our custom middleware for checking if a user is logged in
+const isAuthenticated = require("../config/middleware/isAuthenticated");
+
 const htmlRoutes = new Router();
 
 htmlRoutes.get('/', async (req, res) => {
@@ -8,32 +11,44 @@ htmlRoutes.get('/', async (req, res) => {
 });
 
 htmlRoutes.get('/signUp', async (req, res) => {
-    res.render('signUp', {});
+  res.render('signUp', {});
 })
 
 // Load example page and pass in an example by id
 htmlRoutes.get('/example/:id', async (req, res) => {
-  const options = {
-    where: {
-      id: req.params.id
-    }
-  };
+  //if user is logged in let them access otherwise send them to login page
+  if (req.user) {
+    const options = {
+      where: {
+        id: req.params.id
+      }
+    };
 
-  const dbExample = await db.Example.findOne(options);
+    const dbExample = await db.Example.findOne(options);
 
-  res.render('example', {
-    example: dbExample
-  });
+    res.render('example', {
+      example: dbExample
+    });
+  }
+  res.render('index', {});
 });
 
 // connect to survey handlebars
 htmlRoutes.get('/surveys/create', async (req, res) => {
-  res.render('createSurvey');
+  //if user is logged in let them access otherwise send them to login page
+  if (req.user) {
+    res.render('createSurvey');
+  }
+  res.render('index', {});
 });
 
-//for all user surveys
+//for all user surveys.
 htmlRoutes.get('/surveys', async (req, res) => {
-  res.render('surveys');
+  //if user is logged in let them access otherwise send them to login page
+  if (req.user) {
+    res.render('surveys');
+  }
+  res.render('index', {});
 });
 
 //for each created survey
@@ -60,6 +75,5 @@ htmlRoutes.get('/surveys/:id/take', async (req, res) => {
 htmlRoutes.get('*', async (req, res) => {
   res.render('404');
 });
-
 
 module.exports = htmlRoutes;
