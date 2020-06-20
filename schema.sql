@@ -1,5 +1,6 @@
-DROP DATABASE IF EXISTS passport_demo;
+DROP DATABASE IF EXISTS survey_db;
 
-CREATE DATABASE passport_demo;
+CREATE DATABASE survey_db;
 
-USE passport_demo;
+USE survey_db;
+
