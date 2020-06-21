@@ -1,34 +1,40 @@
-<main class="container">
+<main class="input-container">
 
-  <form id="survey">
-    <div class="form-group">
-      <label for="surveyTitle">Title</label>
-      <input type="text" class="form-control" id="surveyTitle" placeholder="Survey Title">
-    </div>
-    <div class="form-group">
-      <label for="question1">Question 1:</label>
-      <input type="text" class="form-control" id="question1" placeholder="Write your question">
-    </div>
-    <div class="form-group">
-      <label for="question2">Question 2:</label>
-      <input type="text" class="form-control" id="question2" placeholder="Write your question">
-    </div>
-    <div class="form-group">
-      <label for="question3">Question 3:</label>
-      <input type="text" class="form-control" id="question3" placeholder="Write your question">
-    </div>
-    <div class="form-group">
-      <label for="question4">Question 4:</label>
-      <input type="text" class="form-control" id="question4" placeholder="Write your question">
-    </div>
-    <div class="form-group">
-      <label for="question5">Question 5:</label>
-      <input type="text" class="form-control" id="question5" placeholder="Write your question">
-    </div>
+    <header class="input-header">
+        <h2>Create A Survey!</h2>
+        <p>Note: All questions will be formatted as true or false questions.</p>
+    </header>
 
-    <button type="button" class="btn btn-lg" id="createSurveyBtn">Submit</button>
+    <section class="inputs">
+        <form id="survey" class="inputs-form">
+            <div class="form-group">
+                <label for="surveyTitle" class="form-prompt">Title:</label>
+                <input type="text" class="form-control" id="surveyTitle" placeholder="Survey Title"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="question1" class="form-prompt">Question 1:</label>
+                <textarea type="text" class="form-control" id="question1" placeholder="Write your question"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="question2" class="form-prompt">Question 2:</label>
+                <textarea type="text" class="form-control" id="question2" placeholder="Write your question"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="question3" class="form-prompt">Question 3:</label>
+                <textarea type="text" class="form-control" id="question3" placeholder="Write your question"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="question4" class="form-prompt">Question 4:</label>
+                <textarea type="text" class="form-control" id="question4" placeholder="Write your question"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="question5" class="form-prompt">Question 5:</label>
+                <textarea type="text" class="form-control" id="question5" placeholder="Write your question"></textarea>
+            </div>
 
-</div>
-</form>
+            <button type="button" class="submitBtn" id="createSurveyBtn">Submit</button>
+
+        </form>
+    </section>
 </main>
 <script src="/js/survey/createSurvey.js"></script>

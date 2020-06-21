@@ -19,7 +19,7 @@ h1 {
 }
 
 main {
-    padding-bottom: 4em;
+    padding-bottom: 8em;
 }
 
 .input-header {
@@ -67,10 +67,19 @@ h2 {
     grid-row-gap: 2em;
 }
 
+.form-group {
+    width: 100%;
+}
+
 .form-prompt {
     font-size: 1.75em;
     margin-right: 2em;
     text-align: right;
+}
+
+.survey-input {
+    height: 6em;
+    width: 100%;
 }
 
 .textfield {
