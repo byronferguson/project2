@@ -1,29 +1,37 @@
-<main class="container">
-    <form>
+<main class="input-container">
+    <header class="input-header">
         <h1>{{survey.title}}</h1>
-        <ul>
-            {{#each survey.questions}}
-            <li>
-                <p>Question: {{this.question}}</p>
-                <p>
-                <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="question{{this.id}}options" id="true{{this.id}}"
-                        value="option1">
-                    <label class="form-check-label" for="true{{this.id}}">True</label>
-                </div>
-                <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="question{{this.id}}options" id="false{{this.id}}"
-                        value="option2">
-                    <label class="form-check-label" for="false{{this.id}}">False</label>
-                </div>
-                </p>
-            </li>
-            {{/each}}
-        </ul>
-        <p>
-            <a href="/surveys/{{survey.id}}/take">Survey Link</a>
-        </p>
-    </form>
+    </header>
+    <section class="inputs">
+        <form class="inputs-form">
+            <ul>
+                {{#each survey.questions}}
+                <li>
+                    <p>Question: {{this.question}}</p>
+                    <p>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="question{{this.id}}options" id="true{{this.id}}"
+                                value="option1">
+                            <label class="form-check-label" for="true{{this.id}}">True</label>
+                        </div>
 
-
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="question{{this.id}}options" id="false{{this.id}}"
+                                value="option2">
+                            <label class="form-check-label" for="false{{this.id}}">False</label>
+                        </div>
+                    </p>
+                </li>
+                <hr>
+                {{/each}}
+            </ul>
+            <p>
+                <h3>Copy the link below to send this survey to your friends!</h3>
+                <p>Survey Link: <span class="survey-url"></span></p>
+            </p>
+        </form>
+    </section>
 </main>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="/js/survey/takeSurvey.js"></script>

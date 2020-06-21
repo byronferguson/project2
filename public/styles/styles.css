@@ -71,10 +71,19 @@ h2 {
     width: 100%;
 }
 
+li {
+    list-style: none;
+    font-size: 1.75em;
+}
+
 .form-prompt {
     font-size: 1.75em;
     margin-right: 2em;
     text-align: right;
+}
+
+.form-check-label {
+    font-size: .75em;
 }
 
 .survey-input {
@@ -96,9 +105,8 @@ h2 {
     background-color: #724BDC;
 }
 
-.signup-link {
-    font-size: 2em;
-    color: #0645AD;
+h3 {
+    margin-bottom: .75em;
 }
 
 .footer {
