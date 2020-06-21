@@ -1,4 +1,5 @@
 $(function(){
-    console.log("survey page")
+    console.log("survey page");
     
-})
+    $(".survey-url").text(document.URL);
+});
