@@ -2,7 +2,7 @@
 const $ = window.$;
 const $exampleText = $('#example-text');
 const $exampleDescription = $('#example-description');
-const $submitBtn = $('#submit1');
+const $submitBtn = $('#submit');
 const $exampleList = $('#example-list');
 
 // The API object contains methods for each kind of request we'll make
