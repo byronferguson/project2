@@ -17,7 +17,7 @@ $(function () {
             type: "POST",
             data: {
                 survey_title: surveyTitle,
-                survey_questions: questions
+                survey_questions: JSON.stringify(questions)
             },
             success: function (result) {
                 console.log(result);

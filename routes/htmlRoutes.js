@@ -48,20 +48,34 @@ htmlRoutes.get('/surveys', isAuthenticated, (_req, res) => {
 
 //for each created survey
 htmlRoutes.get('/surveys/:id/take', async (req, res) => {
+  // getting surveys from database
+  const options = {
+    where: {
+      id: req.params.id
+    }
+  };
+ 
+  const surveys = await db.Surveys.findOne(options);
+  const surveyQuestions = await db.Survey_Questions.findOne({
+    where: {
+      SurveyId: surveys.id
+    }
+  }
+  );
+
+  const questions = JSON.parse(surveyQuestions.survey_questions);
+  
   res.render('takeSurvey', {
     survey: {
-      id: 1,
-      title: "My Survey",
-      questions: [
-        {
-          id: 1,
-          question: "Whats your name?"
-        },
-        {
-          id: 2,
-          question: "Shut up?"
+      id: surveys.id,
+      title: surveys.survey_title,
+      // q is each question, i=index in the array
+      questions: questions.map((q, i)=>{
+        return {
+          id: i,
+          question: q
         }
-      ]
+      })
     }
   });
 });
