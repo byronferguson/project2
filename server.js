@@ -10,6 +10,7 @@ const {
 const morgan = require('morgan');
 const routes = require('./routes');
 const db = require('./models');
+const surveyRoutes = require('./routes/surveys/surveys_apiRoutes');
 
 const app = express();
 const PORT = process.env.PORT || 8080;
@@ -34,6 +35,7 @@ app.set('view engine', 'handlebars');
 
 // Routes
 app.use(routes);
+app.use(surveyRoutes);
 
 const syncOptions = { force: false };
 

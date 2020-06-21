@@ -2,7 +2,7 @@
 const $ = window.$;
 const $exampleText = $('#example-text');
 const $exampleDescription = $('#example-description');
-const $submitBtn = $('#submit');
+const $submitBtn = $('#submit1');
 const $exampleList = $('#example-list');
 
 // The API object contains methods for each kind of request we'll make
@@ -98,3 +98,8 @@ const handleDeleteBtnClick = function () {
 // Add event listeners to the submit and delete buttons
 $submitBtn.on('click', handleFormSubmit);
 $exampleList.on('click', '.delete', handleDeleteBtnClick);
+
+// Button to take us from login page to create survey
+$("#start").on("click", function(){
+  window.location.href="/surveys/create"
+})
