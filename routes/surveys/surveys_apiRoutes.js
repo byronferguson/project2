@@ -1,7 +1,13 @@
 const Router = require('express').Router;
-const { Surveys } = require("../../models");
-const { Survey_Questions } = require("../../models");
-const { Survey_Answers } = require("../../models");
+const {
+    Surveys
+} = require("../../models");
+const {
+    Survey_Questions
+} = require("../../models");
+const {
+    Survey_Answers
+} = require("../../models");
 
 const surveyRoutes = Router();
 surveyRoutes
@@ -31,7 +37,7 @@ surveyRoutes
     })
 
 surveyRoutes
-    .route('/surveycreate/:SurveyId')
+    .route('/survey/:SurveyId')
     //display survey questions / title to be answered
     .get(async (req, res) => {
         const dbsurvey = await Survey_Questions.findAll({
@@ -42,25 +48,24 @@ surveyRoutes
         });
         res.json(dbsurvey);
     })
+
+surveyRoutes
+    .route('/surveys')
     // save survey title from creator
     .post(async (req, res) => {
+        console.log(req);
         const dbsurvey = await Surveys.create({
             survey_title: req.body.survey_title,
-            UserId: req.body.UserId
-        }
-        );
-        res.json(dbsurvey);
-    })
-    // save survey questions from creator 
-    .post(async (req, res) => {
-        const dbsurvey = await Survey_Questions.create({
+            UserId: req.user.id
+        });
+        console.log(dbsurvey);
+        const results = await Survey_Questions.create({
             survey_questions: req.body.survey_questions,
-            SurveyId: req.params.SurveyId
-        }
-        );
-        res.json(dbsurvey);
-    });
-
+            SurveyId: dbsurvey.id
+        });
+        res.json(results);
+    })
+    
 surveyRoutes
     .route('/surveyanswer')
     // save survey answer from responser
