@@ -1,10 +1,19 @@
 <main class="input-container">
     <header class="input-header">
-        <h2>Welcome!</h2>
-        <p>You have logged in</p>
+        <h2>Welcome <span class="member-name"></span></h2>
+        <button class="logout-Btn">Log Out</button>
     </header>
 
     <section class="inputs">
+        <ul>
+            {{#each Surveys}}
+            <li>
+                {{survey_title}}
+                <button class="result-Btn">Result</button>
+                <button class="delete-Btn">Delete</button>
+            </li>
+            {{/each}}
+        </ul>
         <button class="submitBtn" id="start">Create Survey</button>
     </section>
 </main>
