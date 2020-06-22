@@ -41,8 +41,15 @@ htmlRoutes.get('/surveys/create', isAuthenticated, async (req, res) => {
 });
 
 //for all user surveys.
-htmlRoutes.get('/surveys', isAuthenticated, (_req, res) => {
-  res.render('surveys', {});
+htmlRoutes.get('/surveys', isAuthenticated, async (req, res) => {
+  const surveys = await db.Surveys.findAll({
+    attributes: ['survey_title'],
+    where: {
+      UserId: req.user.id
+    }
+  });
+  console.log(surveys)
+  res.render('surveys', { Surveys: surveys });
 
 });
 
@@ -54,7 +61,7 @@ htmlRoutes.get('/surveys/:id/take', async (req, res) => {
       id: req.params.id
     }
   };
- 
+
   const surveys = await db.Surveys.findOne(options);
   const surveyQuestions = await db.Survey_Questions.findOne({
     where: {
@@ -64,13 +71,13 @@ htmlRoutes.get('/surveys/:id/take', async (req, res) => {
   );
 
   const questions = JSON.parse(surveyQuestions.survey_questions);
-  
+
   res.render('takeSurvey', {
     survey: {
       id: surveys.id,
       title: surveys.survey_title,
       // q is each question, i=index in the array
-      questions: questions.map((q, i)=>{
+      questions: questions.map((q, i) => {
         return {
           id: i,
           question: q
