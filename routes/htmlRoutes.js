@@ -16,25 +16,6 @@ htmlRoutes.get('/', async (req, res) => {
 
 htmlRoutes.get('/signUp', async (req, res) => {
   res.render('signUp', {});
-})
-
-// Load example page and pass in an example by id
-htmlRoutes.get('/example/:id', async (req, res) => {
-  //if user is logged in let them access otherwise send them to login page
-  if (req.user) {
-    const options = {
-      where: {
-        id: req.params.id
-      }
-    };
-
-    const dbExample = await db.Example.findOne(options);
-
-    res.render('example', {
-      example: dbExample
-    });
-  }
-  res.render('index', {});
 });
 
 // connect to survey handlebars
@@ -46,7 +27,7 @@ htmlRoutes.get('/surveys/create', isAuthenticated, async (req, res) => {
 //for all user surveys.
 htmlRoutes.get('/surveys', isAuthenticated, async (req, res) => {
   const surveys = await db.Surveys.findAll({
-    attributes: ['survey_title'],
+    attributes: ['id', 'survey_title'],
     where: {
       UserId: req.user.id
     }
@@ -143,6 +124,11 @@ htmlRoutes.get('/surveys/:id/results', async (req, res) => {
 htmlRoutes.get('/logout', function (req, res) {
   req.logout();
   res.redirect('/');
+});
+
+htmlRoutes.get('/logout', function (req, res) {
+    req.logout();
+    res.redirect('/');
 });
 
 // Render 404 page for any unmatched routes

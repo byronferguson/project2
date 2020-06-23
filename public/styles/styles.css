@@ -8,7 +8,7 @@ html, body {
 }
 
 .header {
-    background-color: #4DBC96;
+    background-color: #2A8460;
     padding: 3em;
     display: flex;
     justify-content: center;
@@ -16,6 +16,7 @@ html, body {
 
 h1 {
     font-size: 3.25em;
+    color: white;
 }
 
 main {
@@ -23,7 +24,7 @@ main {
 }
 
 .input-header {
-    background-color: #4DBC96;
+    background-color: #2A8460;
     width: 80%;
     margin: 6em auto 0;
     padding: 2em;
@@ -38,13 +39,14 @@ p {
 
 h2 {
     font-size: 2.75em;
+    color: white;
 }
 
 .inputs {
     width: 80%;
+    background-color: #D1D1D1;
     margin: auto;
     padding: 2em;
-    border: 1px solid grey;
     border-radius: 0 0 .75em .75em;
     display: flex;
     flex-direction: column;
@@ -76,6 +78,15 @@ li {
     font-size: 1.75em;
 }
 
+.actionBtn {
+    background-color: #36AB7C;
+    border: none;
+    border-radius: .25em;
+    padding: 0 1em;
+    margin-left: .25em;
+    color: #2D2169;
+}
+
 .form-prompt {
     font-size: 1.75em;
     margin-right: 2em;
@@ -98,11 +109,12 @@ li {
 
 .submitBtn {
     margin: .75em 0 1em 0;
+    border: none;
     font-size: 2em;
     padding: .25em 2em;
     border-radius: .75em;
-    color: white;
-    background-color: #724BDC;
+    color: #2D2169;
+    background-color: #c09919;
 }
 
 h3 {
