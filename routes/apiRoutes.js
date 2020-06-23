@@ -17,7 +17,7 @@ apiRoutes.post("/login", passport.authenticate("local"), (req, res) => {
         email: req.user.email,
         id: req.user.id
     });
-    //res.redirect("/surveys");
+    // res.redirect("/surveys");
 
 });
 
@@ -36,7 +36,6 @@ apiRoutes.post("/signup", (req, res) => {
             res.status(401).json(err);
         });
 });
-
 
 // Route for getting some data about our user to be used client side
 apiRoutes.get("/user_data", (req, res) => {
