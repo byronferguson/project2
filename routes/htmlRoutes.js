@@ -55,7 +55,6 @@ htmlRoutes.get('/surveys', isAuthenticated, async (req, res) => {
   res.render('surveys', {
     Surveys: surveys
   });
-
 });
 
 //for each created survey
@@ -117,7 +116,7 @@ htmlRoutes.get('/surveys/:id/results', async (req, res) => {
       [sequelize.fn("SUM", sequelize.col("answer5")), "answer5"],
     ]
   })
-  
+
   console.log("survey results:", surveyAnswers[0].dataValues);
   const questions = JSON.parse(surveyQuestions.survey_questions);
 
@@ -132,13 +131,18 @@ htmlRoutes.get('/surveys/:id/results', async (req, res) => {
         numTrue: surveyAnswers[0].dataValues["answer" + (i + 1)],
         numFalse: surveyAnswers[0].dataValues.count - surveyAnswers[0].dataValues["answer" + (i + 1)]
       }
-      
+
     })
   }
   console.log(data);
   res.render('surveyResults', {
     surveyResults: data
   });
+});
+
+htmlRoutes.get('/logout', function (req, res) {
+  req.logout();
+  res.redirect('/');
 });
 
 // Render 404 page for any unmatched routes
