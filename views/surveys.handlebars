@@ -1,7 +1,7 @@
 <main class="input-container">
     <header class="input-header">
         <h2>Welcome <span class="member-name"></span></h2>
-        <button class="logout-Btn">Log Out</button>
+        <button id="logout-Btn">Log Out</button>
     </header>
 
     <section class="inputs">
@@ -9,9 +9,11 @@
             {{#each Surveys}}
             <li>
                 {{survey_title}}
-                <button class="result-Btn">Result</button>
-                <button class="delete-Btn">Delete</button>
+                <button href="/surveys/{{id}}/take" id="takeBtn" class="actionBtn">Take</button>
+                <button href="/surveys/{{id}}/results" id="result-Btn" class="actionBtn">Result</button>
+                <button href="/surveys/{{id}}/delete" id="delete-Btn" class="actionBtn">Delete</button>
             </li>
+            <hr>
             {{/each}}
         </ul>
         <button class="submitBtn" id="start">Create Survey</button>

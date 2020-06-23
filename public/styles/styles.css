@@ -8,7 +8,7 @@ html, body {
 }
 
 .header {
-    background-color: #4DBC96;
+    background-color: #2A8460;
     padding: 3em;
     display: flex;
     justify-content: center;
@@ -16,6 +16,7 @@ html, body {
 
 h1 {
     font-size: 3.25em;
+    color: white;
 }
 
 main {
@@ -23,7 +24,7 @@ main {
 }
 
 .input-header {
-    background-color: #4DBC96;
+    background-color: #2A8460;
     width: 80%;
     margin: 6em auto 0;
     padding: 2em;
@@ -38,13 +39,14 @@ p {
 
 h2 {
     font-size: 2.75em;
+    color: white;
 }
 
 .inputs {
     width: 80%;
+    background-color: #D1D1D1;
     margin: auto;
     padding: 2em;
-    border: 1px solid grey;
     border-radius: 0 0 .75em .75em;
     display: flex;
     flex-direction: column;

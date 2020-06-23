@@ -16,25 +16,6 @@ htmlRoutes.get('/', async (req, res) => {
 
 htmlRoutes.get('/signUp', async (req, res) => {
   res.render('signUp', {});
-})
-
-// Load example page and pass in an example by id
-htmlRoutes.get('/example/:id', async (req, res) => {
-  //if user is logged in let them access otherwise send them to login page
-  if (req.user) {
-    const options = {
-      where: {
-        id: req.params.id
-      }
-    };
-
-    const dbExample = await db.Example.findOne(options);
-
-    res.render('example', {
-      example: dbExample
-    });
-  }
-  res.render('index', {});
 });
 
 // connect to survey handlebars
