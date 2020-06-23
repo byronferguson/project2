@@ -27,7 +27,7 @@ htmlRoutes.get('/surveys/create', isAuthenticated, async (req, res) => {
 //for all user surveys.
 htmlRoutes.get('/surveys', isAuthenticated, async (req, res) => {
   const surveys = await db.Surveys.findAll({
-    attributes: ['survey_title'],
+    attributes: ['id', 'survey_title'],
     where: {
       UserId: req.user.id
     }
