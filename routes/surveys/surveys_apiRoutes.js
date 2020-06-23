@@ -65,21 +65,6 @@ surveyRoutes
         });
         res.json(results);
     })
-    
-surveyRoutes
-    .route('/surveyanswer')
-    // save survey answer from responser
-    .post(async (req, res) => {
-        const dbsurvey = await Survey_Answers.create({
-            survey_answers: req.body.survey_answers,
-            SurveyQuestionId: req.body.SurveyQuestionId
-        });
-        res.json(dbsurvey);
-    });
-
-surveyRoutes
-    .route('/surveydelete')
-    // delete survey by surveyId
     .delete(async (req, res) => {
         const options = {
             where: {
@@ -87,6 +72,21 @@ surveyRoutes
             }
         };
         const dbsurvey = await Survey_Questions.destroy(options);
+        res.json(dbsurvey);
+    });
+    
+surveyRoutes
+    .route('/survey/:id/answers')
+    // save survey answer from responser
+    .post(async (req, res) => {
+        const dbsurvey = await Survey_Answers.create({
+            answer1: req.body.question1,
+            answer2: req.body.question2,
+            answer3: req.body.question3,
+            answer4: req.body.question4,
+            answer5: req.body.question5,
+            SurveyQuestionId: req.body.surveyQuestionId
+        });
         res.json(dbsurvey);
     });
 

@@ -76,6 +76,7 @@ htmlRoutes.get('/surveys/:id/take', async (req, res) => {
     survey: {
       id: surveys.id,
       title: surveys.survey_title,
+      survey_question_id: surveyQuestions.id,
       // q is each question, i=index in the array
       questions: questions.map((q, i) => {
         return {
