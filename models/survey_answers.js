@@ -3,8 +3,12 @@ module.exports = (sequelize, DataTypes) => {
     const Survey_Answers = sequelize.define(
         'Survey_Answers',
         {
-            // questions_id: DataTypes.INTERGER,
-            survey_answers: DataTypes.BOOLEAN
+            // The answers for each question
+            answer1: DataTypes.BOOLEAN,
+            answer2: DataTypes.BOOLEAN,
+            answer3: DataTypes.BOOLEAN,
+            answer4: DataTypes.BOOLEAN,
+            answer5: DataTypes.BOOLEAN
         }
     );
     Survey_Answers.associate = function (models) {
