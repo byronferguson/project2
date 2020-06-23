@@ -1,6 +1,6 @@
 const Router = require('express').Router;
 const {
-    Surveys
+    Surveys, sequelize
 } = require("../../models");
 const {
     Survey_Questions
@@ -88,6 +88,31 @@ surveyRoutes
             SurveyQuestionId: req.body.surveyQuestionId
         });
         res.json(dbsurvey);
-    });
+    })
+    .get(async (req, res) => {
+        const surveyQuestions = await Survey_Questions.findOne({
+            where:{
+                SurveyId: req.params.id
+            }
+        })
+        const surveyAnswers = await Survey_Answers.findAll({
+            where: {
+                surveyQuestionId: surveyQuestionId.id
+            },
+            attributes: [[
+                sequelize.fn('COUNT', sequelize.col('id')), 
+                sequelize.fn("SUM", sequelize.col("answer1")),
+                sequelize.fn("SUM", sequelize.col("answer2")),
+                sequelize.fn("SUM", sequelize.col("answer3")),
+                sequelize.fn("SUM", sequelize.col("answer4")),
+                sequelize.fn("SUM", sequelize.col("answer5")),
+            ]]
+        })
+        res.json({
+            surveyId: req.params.id,
+            surveyQuestionId: surveyQuestionId.id,
+            answers: surveyAnswers
+        })
+    })
 
 module.exports = surveyRoutes;

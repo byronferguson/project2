@@ -26,7 +26,7 @@ $(function(){
             },
             success: function (result) {
                 console.log(result);
-                // window.location.href = `/surveys/${surveyId}/results`;
+                window.location.href = `/surveys/${surveyId}/results`;
             }
         });
     }
