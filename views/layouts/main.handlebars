@@ -2,14 +2,37 @@
 <html>
 
 <head>
-  <meta charset="utf-8">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css">
-  <link rel="stylesheet" href="/styles/styles.css" media="screen" title="no title" charset="utf-8">
-  <title>Home Page</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/styles/styles.css" media="screen" title="no title" charset="utf-8">
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <title>Home Page</title>
 </head>
 
 <body>
-  {{{body}}}
+    <div class="wrapper">
+        <header class="header">
+            <h1>Project Name/ Logo</h1>
+        </header>
+        
+        <div class="user-control">
+            <p class="logged-as">Logged in as <a href="/surveys" class="member-name"></a></p>
+            <button onclick="window.location.href='/logout'" id="logout-Btn" class="actionBtn">Log Out</button>
+        </div>
+
+        {{{body}}}
+        
+        <footer class="footer">
+            <ul class="links">
+                <li id="about">About</li>
+                <li id="terms">Terms</li>
+                <li id="creators">Creators</li>
+                <li id="help">Help</li>
+            </ul>
+        </footer>
+    </div>
 </body>
+
+<script src="/js/index.js"></script>
 
 </html>

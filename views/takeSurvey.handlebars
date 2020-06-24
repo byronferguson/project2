@@ -1,0 +1,40 @@
+<main class="input-container">
+    <header class="input-header">
+        <h1>{{survey.title}}</h1>
+    </header>
+    <div value={{survey.survey_question_id}} id="surveyQuestionId"></div>
+    <div value={{survey.id}} id="surveyId"></div>
+    <section class="inputs">
+        <form class="inputs-form">
+            <ul>
+                {{#each survey.questions}}
+                <li>
+                    <p>Question: {{this.question}}</p>
+                    <p>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="question{{this.id}}options" id="true{{this.id}}"
+                                value="true">
+                            <label class="form-check-label" for="true{{this.id}}">True</label>
+                        </div>
+
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" id="false{{this.id}}"
+                                value="false">
+                            <label class="form-check-label" for="false{{this.id}}">False</label>
+                        </div>
+                    </p>
+                </li>
+                <hr>
+                {{/each}}
+            </ul>
+            <button type="button" class="submitBtn" id="takeSurveyBtn">Submit</button>
+            <p>
+                <h3>Copy the link below to send this survey to your friends!</h3>
+                <p>Survey Link: <span class="survey-url"></span></p>
+            </p>
+        </form>
+    </section>
+</main>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="/js/survey/takeSurvey.js"></script>
