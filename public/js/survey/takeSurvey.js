@@ -9,7 +9,7 @@ $(function(){
         const surveyQuestionId = $("#surveyQuestionId").attr("value");
         const surveyId = $("#surveyId").attr("value");
         for (let index = 0; index < 5; index++) {
-            const answer = $(`input[name="question${index}options"]:checked`).val();
+            const answer = $(`input[id="true${index}"]:checked`).val();
             console.log(answer);
             (answer) ? answers.push(true): answers.push(false);
         }
