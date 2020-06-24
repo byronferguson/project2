@@ -14,6 +14,7 @@ module.exports = (sequelize, DataTypes) => {
     Survey_Answers.associate = function (models) {
         // associations can be defined here
         Survey_Answers.belongsTo(models.Survey_Questions, {
+            onDelete: "cascade",
             foreignKey: {
                 allowNull: false
             }

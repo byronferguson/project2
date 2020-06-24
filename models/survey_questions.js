@@ -15,7 +15,10 @@ module.exports = (sequelize, DataTypes) => {
       }
     });
     Survey_Questions.hasMany(models.Survey_Answers, {
-      onDelete: "cascade"
+      onDelete: "cascade",
+      foreignKey: {
+        allowNull: false
+      }
     });
   };
   return Survey_Questions;
