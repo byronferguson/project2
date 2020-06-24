@@ -1,0 +1,18 @@
+<main class="input-container">
+    <header class="input-header">
+        <h2>{{surveyResults.surveyTitle}} Survey Results</h2>
+    </header>
+
+    <section class="inputs">
+        <ul>
+            {{#each surveyResults.answers}}
+            <li>
+                {{this.question}}
+                <div>True: {{this.numTrue}}</div>
+                <div>False: {{this.numFalse}}</div>
+            </li>
+            {{/each}}
+        </ul>
+        <div>Total Number of Responses: {{surveyResults.total}}</div>
+    </section>
+</main>

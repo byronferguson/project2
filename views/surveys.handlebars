@@ -1,0 +1,24 @@
+<main class="input-container">
+    <header class="input-header">
+        <h2>Welcome <span class="member-name"></span></h2>
+    </header>
+
+    <section class="inputs">
+        <ul>
+            {{#each Surveys}}
+            <li>
+                {{survey_title}}
+                <button onclick="window.location.href='/surveys/{{id}}/take'" id="takeBtn"
+                    class="actionBtn">Take</button>
+                <button onclick="window.location.href='/surveys/{{id}}/results'" id="result-Btn"
+                    class="actionBtn">Results</button>
+                <button id="delete-Btn" class="actionBtn" data-surveyID="{{id}}">Delete</button>
+            </li>
+            <hr>
+            {{/each}}
+        </ul>
+        <button class="submitBtn" id="start">Create Survey</button>
+    </section>
+</main>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
