@@ -193,6 +193,10 @@ a {
         padding-bottom: 3rem;
     }
 
+    .input-container {
+        width: 100%;
+    }
+
     .input-header {
         margin: 2rem auto 0;
         width: 100%;
@@ -211,6 +215,18 @@ a {
         display: flex;
         flex-direction: column;
         align-items: center;
+    }
+
+    .form-grid {
+        grid-template-columns: auto;
+        grid-template-rows: auto auto auto auto;
+        justify-content: center;
+    }
+
+    .form-prompt {
+        font-size: 1.75rem;
+        margin-right: 0;
+        text-align: center;
     }
 
     ul {
