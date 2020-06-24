@@ -7,7 +7,7 @@
         <ul>
             {{#each Surveys}}
             <li>
-                {{survey_title}}
+                <p class="survey-title">{{survey_title}}</p>
                 <button onclick="window.location.href='/surveys/{{id}}/take'" id="takeBtn"
                     class="actionBtn">Take</button>
                 <button onclick="window.location.href='/surveys/{{id}}/results'" id="result-Btn"
