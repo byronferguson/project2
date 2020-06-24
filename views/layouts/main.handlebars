@@ -15,6 +15,11 @@
             <h1>Project Name/ Logo</h1>
         </header>
         
+        <div class="user-control">
+            <p class="logged-as">Logged in as <a href="/surveys" class="member-name"></a></p>
+            <button onclick="window.location.href='/logout'" id="logout-Btn" class="actionBtn">Log Out</button>
+        </div>
+
         {{{body}}}
         
         <footer class="footer">
@@ -27,5 +32,7 @@
         </footer>
     </div>
 </body>
+
+<script src="/js/index.js"></script>
 
 </html>

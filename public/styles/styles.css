@@ -19,6 +19,22 @@ h1 {
     color: white;
 }
 
+.user-control {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin-top: 10.375em;
+    padding: .75rem;
+    background-color: #D1D1D1;
+    border-radius: 0 0 0 .5em;
+    text-align: center;
+}
+
+#logout-Btn {
+    margin-top: .75rem;
+    color: #2D2169;
+}
+
 main {
     padding-bottom: 8em;
 }
@@ -26,7 +42,7 @@ main {
 .input-header {
     background-color: #2A8460;
     width: 80%;
-    margin: 6em auto 0;
+    margin: 8em auto 0;
     padding: 2em;
     text-align: center;
     border-radius: .75em .75em 0 0;
