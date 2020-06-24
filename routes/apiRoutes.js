@@ -52,6 +52,7 @@ apiRoutes.get("/user_data", (req, res) => {
     }
 });
 
+
 apiRoutes.delete('/survey/delete/:id', async (req, res) => {
     const options = {
         where: {
@@ -61,6 +62,7 @@ apiRoutes.delete('/survey/delete/:id', async (req, res) => {
     const dbExample = await db.Surveys.destroy(options);
     res.json(dbExample);
 });
+
 module.exports = apiRoutes;
 
 

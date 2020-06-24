@@ -14,7 +14,7 @@ module.exports = (sequelize, DataTypes) => {
                 allowNull: false
             }
         });
-        Surveys.hasOne(models.Survey_Questions, {
+        Surveys.hasMany(models.Survey_Questions, {
             onDelete: "cascade",
             foreignKey: {
                 allowNull: false

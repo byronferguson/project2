@@ -1,7 +1,7 @@
 {
   "development": {
     "username": "root",
-    "password": "Qotkddn0925!",
+    "password": "",
     "database": "survey_db",
     "host": "127.0.0.1",
     "dialect": "mysql"
@@ -14,6 +14,7 @@
     "dialect": "mysql"
   },
   "production": {
-    "use_env_variable": "PLACE_DB_ENV_HERE"
+    "use_env_variable": "JAWSDB_URL",
+    "dialect": "mysql"
   }
 }
