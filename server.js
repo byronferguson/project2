@@ -2,7 +2,7 @@ require('dotenv').config();
 const express = require('express');
 const Handlebars = require('handlebars');
 const exphbs = require('express-handlebars');
-const passport = require("../project2/config/passport");
+const passport = require("./config/passport");
 const expressSession = require("express-session");
 const {
   allowInsecurePrototypeAccess
