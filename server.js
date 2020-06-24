@@ -37,7 +37,7 @@ app.set('view engine', 'handlebars');
 app.use(routes);
 app.use(surveyRoutes);
 
-const syncOptions = { force: false };
+const syncOptions = { force: true };
 
 // If running a test, set syncOptions.force to true
 // clearing the `testdb`
