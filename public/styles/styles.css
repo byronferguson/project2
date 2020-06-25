@@ -1,287 +1,289 @@
-html, body {
-    height: 100%;
-    color: #2D2169;
+html,
+body {
+  height: 100%;
+  color: #2d2169;
 }
 
 .wrapper {
-    min-height: 100%;
-    position: relative;
+  min-height: 100%;
+  position: relative;
 }
 
 .header {
-    background-color: #2A8460;
-    padding: 3rem;
-    display: flex;
-    justify-content: center;
+  background-color: #2a8460;
+  padding: 3rem;
+  display: flex;
+  justify-content: center;
 }
 
 h1 {
-    font-size: 3.25rem;
-    color: white;
-    text-align: center;
+  font-size: 3.25rem;
+  color: white;
+  text-align: center;
 }
 
 .logo {
-    width: 10rem;
+  width: 10rem;
 }
 
 .user-control {
-    position: absolute;
-    top: 0;
-    right: 0;
-    margin-top: 10.375rem;
-    padding: .75rem;
-    background-color: #D1D1D1;
-    border-radius: 0 0 0 .5rem;
-    text-align: center;
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin-top: 10.375rem;
+  padding: 0.75rem;
+  background-color: #d1d1d1;
+  border-radius: 0 0 0 0.5rem;
+  text-align: center;
 }
 
 #logout-Btn {
-    margin-top: .75rem;
+  margin-top: 0.75rem;
 }
 
 main {
-    padding-bottom: 8rem;
+  padding-bottom: 8rem;
 }
 
 .input-header {
-    background-color: #2A8460;
-    width: 80%;
-    margin: 8rem auto 0;
-    padding: 2rem;
-    text-align: center;
-    border-radius: .75rem .75rem 0 0;
+  background-color: #2a8460;
+  width: 80%;
+  margin: 8rem auto 0;
+  padding: 2rem;
+  text-align: center;
+  border-radius: 0.75rem 0.75rem 0 0;
 }
 
 p {
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  padding: 0;
 }
 
 h2 {
-    font-size: 2.75rem;
-    color: white;
+  font-size: 2.75rem;
+  color: white;
 }
 
 .inputs {
-    width: 80%;
-    background-color: #D1D1D1;
-    margin: auto;
-    padding: 2rem;
-    border-radius: 0 0 .75rem .75rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  width: 80%;
+  background-color: #d1d1d1;
+  margin: auto;
+  padding: 2rem;
+  border-radius: 0 0 0.75rem 0.75rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .inputs-form {
-    display: flex;
-    width: 80%;
-    flex-direction: column;
-    align-items: center;
+  display: flex;
+  width: 80%;
+  flex-direction: column;
+  align-items: center;
 }
 
 .form-grid {
-    margin: 2rem;
-    width: 80%;
-    display: grid;
-    grid-template-columns: auto auto;
-    grid-template-rows: auto auto;
-    grid-row-gap: 2rem;
+  margin: 2rem;
+  width: 80%;
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-template-rows: auto auto;
+  grid-row-gap: 2rem;
 }
 
 .form-group {
-    width: 100%;
+  width: 100%;
 }
 
 li {
-    list-style: none;
-    font-size: 1.75rem;
+  list-style: none;
+  font-size: 1.75rem;
 }
 
-.actionBtn {
-    background-color: #36AB7C;
-    border: none;
-    border-radius: .25rem;
-    padding: 0 1rem;
-    margin-left: .25rem;
+.actionBtn,
+.deleteBtn {
+  background-color: #36ab7c;
+  border: none;
+  border-radius: 0.25rem;
+  padding: 0 1rem;
+  margin-left: 0.25rem;
 }
 
 .form-prompt {
-    font-size: 1.75rem;
-    margin-right: 2rem;
-    text-align: right;
+  font-size: 1.75rem;
+  margin-right: 2rem;
+  text-align: right;
 }
 
 .form-check-label {
-    font-size: 1.75rem;
+  font-size: 1.75rem;
 }
 
 .survey-input {
-    height: 6rem;
-    width: 100%;
+  height: 6rem;
+  width: 100%;
 }
 
 .textfield {
-    height: 3rem;
-    width: 16rem;
+  height: 3rem;
+  width: 16rem;
 }
 
 .submitBtn {
-    margin: .75rem 0 1rem 0;
-    border: none;
-    font-size: 2rem;
-    padding: .25rem 2rem;
-    border-radius: .75rem;
-    background-color: #c09919;
+  margin: 0.75rem 0 1rem 0;
+  border: none;
+  font-size: 2rem;
+  padding: 0.25rem 2rem;
+  border-radius: 0.75rem;
+  background-color: #c09919;
 }
 
 h3 {
-    margin-bottom: .75rem;
+  margin-bottom: 0.75rem;
 }
 
 .footer {
-    position: absolute;
-    width: 100%;
-    bottom: 0;
-    display: flex;
-    justify-content: center;
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
 }
 
 .links {
-    display: flex;
-    justify-content: center;
-    width: 80%;
-    list-style: none;
+  display: flex;
+  justify-content: center;
+  width: 80%;
+  list-style: none;
 }
 
 #github {
-    flex: 1;
-    font-size: 1.75rem;
-    text-align: center;
+  flex: 1;
+  font-size: 1.75rem;
+  text-align: center;
 }
 
 a {
-    color: #0000EE;
+  color: #0000ee;
 }
 
 @media only screen and (max-width: 768px) {
-    .wrapper {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
+  .wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 
-    .header {
-        padding: 1.5rem;
-        width: 100%;
-    }
-    
-    h1 {
-        font-size: 2.5rem;
-    }
+  .header {
+    padding: 1.5rem;
+    width: 100%;
+  }
 
-    .project {
-        display: none;
-    }
+  h1 {
+    font-size: 2.5rem;
+  }
 
-    .user-control {
-        position: static;
-        margin-top: 0;
-        padding: .5rem;
-        background-color: #D1D1D1;
-        border-radius: 0 0 .5rem .5rem;
-    }
+  .project {
+    display: none;
+  }
 
-    #logout-Btn {
-        margin-top: .5rem;
-    }
-    
-    main {
-        padding-bottom: 3rem;
-    }
+  .user-control {
+    position: static;
+    margin-top: 0;
+    padding: 0.5rem;
+    background-color: #d1d1d1;
+    border-radius: 0 0 0.5rem 0.5rem;
+  }
 
-    .input-container {
-        width: 100%;
-    }
+  #logout-Btn {
+    margin-top: 0.5rem;
+  }
 
-    .input-header {
-        margin: 2rem auto 0;
-        width: 100%;
-        padding: 1rem;
-        border-radius: 0;
-    }
-    
-    h2 {
-        font-size: 1.75rem;
-    }
+  main {
+    padding-bottom: 3rem;
+  }
 
-    .inputs {
-        width: 100%;
-        padding: 1rem;
-        border-radius: 0;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
+  .input-container {
+    width: 100%;
+  }
 
-    .form-grid {
-        grid-template-columns: auto;
-        grid-template-rows: auto auto auto auto;
-        justify-content: center;
-    }
+  .input-header {
+    margin: 2rem auto 0;
+    width: 100%;
+    padding: 1rem;
+    border-radius: 0;
+  }
 
-    .form-prompt {
-        font-size: 1.75rem;
-        margin-right: 0;
-        text-align: center;
-    }
+  h2 {
+    font-size: 1.75rem;
+  }
 
-    ul {
-        padding: .25em;
-        margin: 0;
-        text-align: center;
-    }
+  .inputs {
+    width: 100%;
+    padding: 1rem;
+    border-radius: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 
-    .survey-title {
-        display: block;
-        font-size: 1.5rem;
-    }
+  .form-grid {
+    grid-template-columns: auto;
+    grid-template-rows: auto auto auto auto;
+    justify-content: center;
+  }
 
-    .note {
-        color: white;
-    }
-    
-    li {
-        font-size: 1.25rem;
-    }
-    
-    .form-check-label {
-        font-size: 1rem;
-    }
-    
-    .submitBtn {
-        margin: 0 0 1rem 0;
-        font-size: 1.5rem;
-        padding: .25rem 2rem;
-        border-radius: .5rem;
-        background-color: #c09919;
-    }
-    
-    h3 {
-        margin-bottom: .5rem;
-    }
+  .form-prompt {
+    font-size: 1.75rem;
+    margin-right: 0;
+    text-align: center;
+  }
 
-    .links {
-        display: flex;
-        justify-content: center;
-        width: 100%;
-        list-style: none;
-    }
-    
-    #github {
-        flex: 1;
-        font-size: 1rem;
-        text-align: center;
-    }
+  ul {
+    padding: 0.25em;
+    margin: 0;
+    text-align: center;
+  }
+
+  .survey-title {
+    display: block;
+    font-size: 1.5rem;
+  }
+
+  .note {
+    color: white;
+  }
+
+  li {
+    font-size: 1.25rem;
+  }
+
+  .form-check-label {
+    font-size: 1rem;
+  }
+
+  .submitBtn {
+    margin: 0 0 1rem 0;
+    font-size: 1.5rem;
+    padding: 0.25rem 2rem;
+    border-radius: 0.5rem;
+    background-color: #c09919;
+  }
+
+  h3 {
+    margin-bottom: 0.5rem;
+  }
+
+  .links {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    list-style: none;
+  }
+
+  #github {
+    flex: 1;
+    font-size: 1rem;
+    text-align: center;
+  }
 }

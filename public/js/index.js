@@ -4,6 +4,7 @@ const $exampleText = $('#example-text');
 const $exampleDescription = $('#example-description');
 const $submitBtn = $('#submit');
 const $exampleList = $('#example-list');
+const $deleteBtn = $('.deleteBtn');
 
 // The API object contains methods for each kind of request we'll make
 const API = {
@@ -21,11 +22,12 @@ const handleDeleteBtnClick = function () {
     const idToDelete = $(this).attr('data-surveyid');
     API.deleteExample(idToDelete).then(function () {
         location.reload();
+        console.log(idToDelete);
     });
 };
 
 // Add event listeners to the submit and delete buttons
-$("#delete-Btn").on("click", handleDeleteBtnClick);
+$deleteBtn.on("click", handleDeleteBtnClick);
 
 // Button to take us from login page to create survey
 $("#start").on("click", function () {

@@ -74,7 +74,7 @@ surveyRoutes
         const dbsurvey = await Survey_Questions.destroy(options);
         res.json(dbsurvey);
     });
-    
+
 surveyRoutes
     .route('/survey/:id/answers')
     // save survey answer from responser
@@ -91,7 +91,7 @@ surveyRoutes
     })
     .get(async (req, res) => {
         const surveyQuestions = await Survey_Questions.findOne({
-            where:{
+            where: {
                 SurveyId: req.params.id
             }
         })
@@ -100,7 +100,7 @@ surveyRoutes
                 surveyQuestionId: surveyQuestionId.id
             },
             attributes: [[
-                sequelize.fn('COUNT', sequelize.col('id')), 
+                sequelize.fn('COUNT', sequelize.col('id')),
                 sequelize.fn("SUM", sequelize.col("answer1")),
                 sequelize.fn("SUM", sequelize.col("answer2")),
                 sequelize.fn("SUM", sequelize.col("answer3")),

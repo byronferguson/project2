@@ -1,6 +1,6 @@
-$(function(){
+$(function () {
     console.log("survey page");
-    
+
     $(".survey-url").text(document.URL);
     $("#takeSurveyBtn").on("click", submitSurvey);
 
@@ -8,11 +8,12 @@ $(function(){
         const answers = [];
         const surveyQuestionId = $("#surveyQuestionId").attr("value");
         const surveyId = $("#surveyId").attr("value");
+
         for (let index = 0; index < 5; index++) {
             const answer = $(`input[id="true${index}"]:checked`).val();
             console.log(answer);
-            (answer) ? answers.push(true): answers.push(false);
-        }
+            (answer) ? answers.push(true) : answers.push(false);
+        };
         $.ajax({
             url: `/survey/${surveyId}/answers`,
             type: "POST",
